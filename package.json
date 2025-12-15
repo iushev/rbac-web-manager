@@ -1,0 +1,42 @@
+{
+  "name": "@iushev/rbac-web-manager",
+  "version": "1.0.0",
+  "private": false,
+  "author": "Ivaylo Ushev",
+  "description": "RBAC Web Manager",
+  "license": "ISC",
+  "keywords": [],
+  "main": "lib/index",
+  "types": "lib/index",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w --preserveWatchOutput",
+    "test": "jest --runInBand",
+    "test:watch": "jest --watch --runInBand",
+    "coverage": "jest --coverage --runInBand",
+    "lint": "eslint src",
+    "preversion": "rimraf ./lib && npm run build"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^24.10.4",
+    "@typescript-eslint/eslint-plugin": "^8.49.0",
+    "@typescript-eslint/parser": "^8.49.0",
+    "eslint": "^9.39.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-prettier": "^5.5.4",
+    "jest": "^30.2.0",
+    "prettier": "^3.7.4",
+    "rimraf": "^6.1.2",
+    "ts-jest": "^29.4.6",
+    "typescript": "^5.9.3"
+  },
+  "peerDependencies": {
+    "@iushev/rbac": "^1.0.53",
+    "axios": "^1.13.2",
+    "http-status-codes": "^2.3.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
