@@ -1,6 +1,6 @@
 {
   "name": "@iushev/rbac-web-manager",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "author": "Ivaylo Ushev",
   "description": "RBAC Web Manager",
