@@ -9,13 +9,13 @@
   "main": "lib/index",
   "types": "lib/index",
   "scripts": {
-    "build": "tsc",
+    "build": "rimraf ./lib && tsc",
     "watch": "tsc -w --preserveWatchOutput",
     "test": "jest --runInBand",
     "test:watch": "jest --watch --runInBand",
     "coverage": "jest --coverage --runInBand",
     "lint": "eslint src",
-    "preversion": "rimraf ./lib && npm run build"
+    "preversion": "npm run build"
   },
   "devDependencies": {
     "@types/jest": "^30.0.0",
