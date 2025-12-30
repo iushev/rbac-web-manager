@@ -45,7 +45,6 @@ export default class WebManager extends BaseManager {
   async load(config?: AxiosRequestConfig): Promise<void> {
     let _rbac: RBACResponse;
     try {
-      console.log("Load RBAC");
       const response = await this.axiosInstance.get<RBACResponse>("/rbac", config);
       _rbac = response.data;
     } catch (err) {
