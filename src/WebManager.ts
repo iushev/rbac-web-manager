@@ -112,7 +112,10 @@ export default class WebManager extends BaseManager {
   private getRbacRules({ rules }: RBACResponse) {
     return Object.keys(rules).reduce<Map<string, Rule>>((prevValue, name) => {
       const ruleData = rules[name];
-      const RuleClass = this.ruleClasses.get(ruleData.data.typeName) ?? Rule;
+      const RuleClass = this.ruleClasses.get(ruleData.data.typeName);
+      if (!RuleClass) {
+        throw new Error(`Unknown rule type: ${ruleData.data.typeName}`);
+      }
       const rule = new RuleClass(name, JSON.parse(ruleData.data.ruleData));
       prevValue.set(name, rule);
       return prevValue;
